@@ -1,11 +1,22 @@
-~<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php 
+
+function plusOne($digits) {
+    $n = count($digits);
+
+    for ($i = $n - 1; $i >= 0; $i--) {
+        if ($digits[$i] < 9) {
+            $digits[$i]++;
+            return $digits;
+        }
+        $digits[$i] = 0; 
+    }
+
+    array_unshift($digits, 1);
+    return $digits;
+}
+
+// example:
+$digits = [1,3,4];
+$result = plusOne($digits);
+print_r($result);
+?>
